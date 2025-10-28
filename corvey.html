@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Romantic Cartographies</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+
+    <script type=text/javascript src="/static/jquery-3.5.1.min.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXKNTDT7Z1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CXKNTDT7Z1');
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <style>
+      #mapid { height: 800px; }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <h3>Romantic Cartographies</h3>
+          <br>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="/">About</a>
+              <li class="list-group-item"><a href="/itineraries.html">Romantic Itineraries</a>
+	          <li class="list-group-item"><a href="/corvey.html">Corvey Collection</a>
+            <li class="list-group-item"><a href="https://github.com/askonivala/Romantic-Cartographies">Published source code</a>
+            <li class="list-group-item"><a href="https://osf.io/s3dvn/">Published dataset</a>
+          </ul>
+        </div>
+        
+        <div class="col-md-10">
+
+        <div class="embed-responsive embed-responsive-21by9">
+          <iframe src="/static/corvey_map.html" class="embed-responsive-item"></iframe>
+        </div>
+          <div>
+            <i>Dataset: <a href="https://www.gale.com/intl/c/ncco-european-literature-1790-1840-the-corvey-collection">Gale Cengage</a>. NEL and geoparsing results: Asko Nivala.</i>
+            <br>
+            <br>
+            <br>
+            <h4>Geoparsing <i>NCCO: The Corvey Collection</i></h4>
+            <br>
+            <p>What kind of imagined geography was constructed in the Romantic era fiction? This interactive map is based on 7,456 English and 2,006 German digitised volumes originally published between the 1790s to 1840s; almost 10,000 documents in total.</p>
+
+            <figure class="figure float-right">
+            	<img src="/static/corvey.jpeg" class="img-fluid rounded float-right">
+        	<figcaption class="figure-caption">Territory of the Princely Abbey of Corvey in the 18th century. (<a href="https://en.wikipedia.org/wiki/Princely_Abbey_of_Corvey#/media/File:Corvey_Seutter-Lotter_1756.jpg">Wikimedia Commons</a>)</figcaption>
+            </figure>
+            <h5>Fürstliche Bibliothek Corvey</h5>
+            <p><a href="https://en.wikipedia.org/wiki/F%C3%BCrstliche_Bibliothek_Corvey">The Fürstliche Bibliothek Corvey</a> is located in the Princely Abbey of Corvey near Höxter (North Rhine-Westphalia, Germany). The Corvey collection is one of the world's largest collections of Romantic literature and English early nineteenth-century popular fiction including many uncommon and unique works. <a href="https://extra.shu.ac.uk/corvey/articles/Significance.html">Its discovery in the 1980s caused a sensation among the book historians.</a> Gale Cengage has digitised a portion of the Corvey Collection, which has been included as a module of their Nineteenth Century Collections Online. <a href="https://www.gale.com/intl/c/ncco-european-literature-1790-1840-the-corvey-collection"><i>NCCO: European Literature, the Corvey Collection, 1790–1840</i></a> dataset used in this map was licensed from Gale Cengage by the University of Turku.</p>
+
+            <h5>Named-entity linking</h5>
+            <p>The interactive map shows named entities in <i>NCCO: European Literature, the Corvey Collection</i>. I have run <a href="https://www.dbpedia-spotlight.org/">DBpedia Spotlight</a> NEL (named-entity linking) algorithm on the OCR'ed English and German documents included in the Corvey Collection. NEL is able to recognise many kinds of entities from unstructured texts, but I have filtered only the toponyms mentioned in the corpus. After that, I have linked these place names with <a href="https://www.dbpedia.org/">DBpedia</a> and <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a>. Finally, I have geocoded the toponyms by fetching their coordinates from DBpedia and plotted the results on the map.</p>
+
+            <p>Although I believe that this data provides a reasonably accurate overview of space imagined in the Corvey Collection, it should be noted that the NEL data includes some errors. The texts in the corpus have been digitised using OCR (optical character recognition), which produces noise (i.e., false characters). Furthermore, the accuracy of DBpedia Spotlight is far from perfect, which poses limitations to the results: some toponyms have been linked to a wrong entity. This is reflected in the "support" value of the hits: a low support value signifies a high probability that the entity might be wrongly recognised.</p>
+
+            <h5>Publication</h5>
+            <p>Asko Nivala: The Construction of Space in English and German Literature 1790–1848: Geoparsing the Corvey Collection, <i>Literary Geographies</i> Vol. 9, No. 2 2023, pp. 352–376, <a href="https://www.literarygeographies.net/index.php/LitGeogs/article/view/370">OPEN ACCESS</a>.</p>
+          </div>
+        </div>
+
+    </div>
+    <div class="col-md-12">
+	<p class="text-right">(C) 2022 Asko Nivala</p>
+    </div>
+
+  </body>
+
+</html>

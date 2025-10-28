@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Romantic Cartographies</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+
+    <script type=text/javascript src="/static/jquery-3.5.1.min.js"></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CXKNTDT7Z1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CXKNTDT7Z1');
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <style>
+      #mapid { height: 800px; }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <h3>Romantic Cartographies</h3>
+          <br>
+          <ul class="list-group">
+            <li class="list-group-item"><a href="/">About</a>
+            <li class="list-group-item"><a href="/itineraries.html">Romantic Itineraries</a>
+	          <li class="list-group-item"><a href="/corvey.html">Corvey Collection</a>
+            <li class="list-group-item"><a href="https://github.com/askonivala/Romantic-Cartographies">Published source code</a>
+            <li class="list-group-item"><a href="https://osf.io/s3dvn/">Published dataset</a>
+          </ul>
+        </div>
+      <div class="col-md-10">
+        <div class="jumbotron">
+          <img src="/static/romcar_logo_2.png" class="img-fluid rounded float-none" alt="Romantic Cartographies">
+          <h1 class="display-4">Romantic Cartographies</h1>
+          <h2 class="display-5">Lived and Imagined Space in English and German Romantic Texts, 1790–1840</h2>
+          <p>Postdoctoral Project 2017–2022<br>
+            Turku Institute for Advanced Studies & Academy of Finland<br>
+            Dr. Asko Nivala<br>
+            University of Turku</p>
+        </div>
+
+        <p class="lead">Romantic Cartographies (ROMCAR) was a digital humanities project (2017–2022) that studied the construction of space during the Romantic era (1790s–1840s).</p>
+        <p class="lead">ROMCAR applied named-entity linking (NEL) to extract toponyms from Romantic fiction and travelogues published in English and German. The results of text mining were visualised as superimposed maps, which produced new knowledge about the relationship of centre and periphery, or urban and natural areas in Romanticism.</p>
+        <p class="lead">This static website archives some findings of the project, while the original interactive web application has been discontinued. <a href="https://osf.io/s3dvn/">The dataset produced during the project is archived in OSF</a> and <a href="https://github.com/askonivala/Romantic-Cartographies">the web application I wrote with Python has a GitHub repository</a>.</p>
+
+        <h3>Publications</h3>
+        <ul>
+          <li>Asko Nivala: The Construction of Space in English and German Literature 1790–1848: Geoparsing the Corvey Collection, <i>Literary Geographies</i> Vol. 9, No. 2 2023, pp. 352–376, <a href="https://www.literarygeographies.net/index.php/LitGeogs/article/view/370">OPEN ACCESS</a>.</li>
+          <li>Asko Nivala: "Travelling in Romantic Bildungsroman Narratives." <i>Romanticism</i> 30(3) 2024, pp. 293–308, DOI:10.3366/rom.2024.0661.</li>
+        </ul>
+ 
+        <img src="/static/sa.jpg" class="img-fluid float-none" alt="Academy of Finland">
+      </div>
+    </div>
+    <div class="col-md-12">
+	   <p class="text-right">(C) 2022 Asko Nivala</p>
+    </div>
+  </body>
+</html>
