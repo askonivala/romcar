@@ -89,25 +89,6 @@
             }
           };
 
-          // source: Euratlas
-          function drawEuratlas1800 () {
-            currentvalue = document.getElementById("Euratlas1800").value;
-            if(currentvalue == "off"){
-              document.getElementById("Euratlas1800").value="on";
-              $.getJSON("https://askonivala.github.io/romcar/static/states_1800_euratlas.geojson", function(data) {
-                Euratlas1800 = L.geoJson(data, {
-                  style: baseMapStyle, // point must be made to a vector before this applies
-                  onEachFeature: onEachFeature
-                });
-                Euratlas1800.addTo(mymap);
-                Euratlas1800.bringToBack();
-              });
-            }else{
-              mymap.removeLayer(Euratlas1800);
-              document.getElementById("Euratlas1800").value="off";
-            }
-          };
-
           // source: http://web.archive.org/web/20080328104539/http://library.thinkquest.org:80/C006628/download.html
           function drawBorders () {
           currentvalue = document.getElementById('borders1815').value;
@@ -132,7 +113,6 @@
           <div align="right">
             <button value="off" id="borders1815" onClick="drawBorders();">State borders 1815</button>
             <!--<button value="off" id="cities1800" onClick="mapBiggestCities();">Major cities 1800</button>-->
-            <button value="off" id="Euratlas1800" onClick="drawEuratlas1800();">Europe 1800</button>
             <button value="off" id="coastlines" onClick="drawTopography();">Coastlines</button>
             <button value="on" id="basemap" onClick="clearBasemap();">Basemap</button>
           </div>
@@ -218,10 +198,6 @@
          // read HGIS name
          if (feature.properties && feature.properties.STAAT_NAME) {
                  layer.bindPopup(feature.properties.STAAT_NAME);
-         }
-         // read euratlas name
-         if (feature.properties && feature.properties.short_name) {
-                 layer.bindPopup(feature.properties.short_name);
          }
          if (feature.properties && feature.properties.name) {
                  layer.bindPopup(feature.properties.name);
